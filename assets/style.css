@@ -8,6 +8,10 @@ body {
     background-color: hsla(50, 17%, 93%, 0.5);
 }
 
+button {
+    cursor: pointer;
+}
+
 h1 {
     font-size: 40px;
     padding: 25px;
