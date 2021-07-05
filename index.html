@@ -11,22 +11,22 @@
     <!-- Whole Page Stylings -->
     <div class="content-container">
         <header>
-            <p class="timer-style">Time Remaining: <span id=timer>0</span></p>
             <div class="flex-column">
                 <h1>Click Start to Begin Quiz!</h1>
                 <nav>
-                    <button id="view-highscoresEl" class = "btn">View Highscores</button>
+                    <button id="scoresEl" class = "btn">Scores</button>
                     <button id="start-quiz" class = "btn">START</button>
                 </nav>
         </header>
-        <main class="quiz-content">
-          <div class="q-a">
-          <h2>Question:</h2>
-            <h3 id="quizQuests"></h3>
-          <h2>Answer:</h2>
-            <h4 id="quizAns"></h4>
-          </div>
-        </main>
+    <!-- Main section to Hold the Quiz-->
+      <div id="quiz-content" class="quiz-cont">
+        <p>You will have 60 seconds to test your knowledge of the JavaScript Language!  For each question you get incorrect, 15 seconds will be deducted from your time remaining.  The number of seconds you have left will be your score.  Good Luck!!!</p>
+        <!-- Quiz Questions and Answers will go here. -->
+      </div>
+      <!-- Quiz Scores -->
+      <div id="scores">
+         <!-- User Scores will display here. -->
+      </div>
     </div>
 <script src="./assets/script.js"></script>
   </body>

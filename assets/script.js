@@ -1,43 +1,85 @@
-var quizPool = [
+// array to hold all the questions and answers. 
+
+let quizQuestions = [
     {
-        question: "The window.confirm function returns a value of _____",
-        possibleAnswers: ["true/false", "A Number", "The Browser Version", "user input"],
-        correctAnswer: "true/false"
+      question: "The window.confirm function returns a value of _____",
+      answers: {
+        a: "true/false",
+        b: "A Number",
+        c: "The Browser Version",
+        d: "Nothing at all"
+      },
+      correctAnswer: "a"
     },
     {
         question: "Placing conten between parentheses is called _____",
-        possibleAnswers: ["Parenting", "Object Manipulation", "Passing an argument into a function", "An Expression"],
-        correctAnswer: "Passing an argument into a function"
+        answers: {
+          a: "Parenting",
+          b: "Object Manipulation",
+          c: "Passing an argument into a function",
+          d: "An Expression"
+        },
+        correctAnswer: "c"
     },
     {
         question: "In JavaScript in order for a Function to execute it must be defined and then _____",
-        possibleAnswers: ["called", "executed", "fired", "enacted"],
-        correctAnswer: "called"
+        answers: {
+          a: "called",
+          b: "executed",
+          c: "fired",
+          d: "enacted"
+        },
+        correctAnswer: "a"
     },
     {
         question: "A ______ is a named location for a value that gets stored in the browser's memory when a program is run.",
-        possibleAnswers: ["place-holder", "variable", "directory", "cookie"],
-        correctAnswer: "variable"
+        answers: {
+          a: "place-holder",
+          b: "variable",
+          c: "directory",
+          d: "cookie"
+        },
+        correctAnswer: "b"
     },
     {
         question: "The infamous 'if...else' statement is an example of a ______ statement.",
-        possibleAnswers: ["direct", "propietary", "boolean", "conditional"],
-        correctAnswer: "conditional"
+        answers: {
+          a: "direct",
+          b: "propietary",
+          c: "boolean",
+          d: "conditional"
+        },
+        correctAnswer: "d"
     }
-];
+  ];
 
-console.log(quizPool);
+// Event Listeners
+document.addEventListener("click", beginQuiz);
 
-//event listeners:
-document.getElementById("start-quiz").addEventListener("click", quizBegin);
+// function to begin the timer once the "START" button is selected. 
+function beginQuiz() {
+
+    window.alert("The quiz has begun!");
+
+}
 
 
-// Function to begin the quiz
 
-function quizBegin() {
-    window.alert("The Quiz Has Begun!")
+  // Function to Generate the QuizQuestions.
+
+function generateQuiz() {
+    // display the first question from the quizQuestions array and possible answers to that question.
 };
-    
+
+
+//generateQuiz ();
+
+//beginQuiz();
+
+
+
+
+
 
 
 
