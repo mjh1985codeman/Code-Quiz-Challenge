@@ -26,6 +26,7 @@ h1 {
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     max-width: 95%;
     margin: 0 auto;
@@ -83,5 +84,17 @@ nav {
 
 .highscores-style:hover {
     opacity: 0.7;
+}
+
+.quiz-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.q-a {
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
 }
 

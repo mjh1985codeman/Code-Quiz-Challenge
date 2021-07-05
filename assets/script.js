@@ -1,4 +1,4 @@
-var quizQuestions = [
+var quizPool = [
     {
         question: "The window.confirm function returns a value of _____",
         possibleAnswers: ["true/false", "A Number", "The Browser Version", "user input"],
@@ -26,7 +26,21 @@ var quizQuestions = [
     }
 ];
 
-var beginQuiz = document.querySelector("#start-quiz");
+console.log(quizPool);
+
+//event listeners:
+document.getElementById("start-quiz").addEventListener("click", quizBegin);
+
+
+// Function to begin the quiz
+
+function quizBegin() {
+    window.alert("The Quiz Has Begun!")
+};
+    
+
+
+
 
 
 
