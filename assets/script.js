@@ -54,7 +54,8 @@ let quizQuestions = [
   ];
 
 // Event Listeners
-document.addEventListener("click", beginQuiz);
+
+document.getElementById("start-quiz").addEventListener("click", beginQuiz);
 
 // function to begin the timer once the "START" button is selected. 
 function beginQuiz() {
