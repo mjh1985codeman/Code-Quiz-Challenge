@@ -1,6 +1,6 @@
 // array to hold all the questions and answers. 
 
-let quizQuestions = [
+var quizQuestions = [
     {
       question: "The window.confirm function returns a value of _____",
       answers: {
@@ -66,11 +66,24 @@ function beginQuiz() {
 
 
 
-  // Function to Generate the QuizQuestions.
+// Function to Generate the QuizQuestions.
 
 function generateQuiz() {
+    // starts the timer.
     // display the first question from the quizQuestions array and possible answers to that question.
 };
+
+function timerCountdown() {
+    // code for to begin.
+    // at the end of the quiz the secondsRemaining will need to be saved as the user score. 
+};
+
+function saveUserScore() {
+    // this function will save the user Score as a variable to be used for the "displayHighScores" function
+}
+function displayhighScores () {
+    // this function will display the stored scores on the screen for h
+}
 
 
 //generateQuiz ();
