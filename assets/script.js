@@ -57,6 +57,11 @@ var quizQuestions = [
 ];
 // Variables to control the DOM
 var timerEl = document.getElementById("timer");
+var quizContainerEl = document.getElementById("quiz-content");
+var questionContainerEl = document.getElementById("question-container");
+var quoteEl = document.getElementById("quote");
+var choicesEl = document.getElementById("choices");
+var feedbackEl = document.getEleementById("feedback");
 // Event Listeners
 
 document.getElementById("start-quiz").addEventListener("click", beginQuiz);
@@ -64,6 +69,8 @@ document.getElementById("start-quiz").addEventListener("click", beginQuiz);
 // function to begin the timer once the "START" button is selected.
 function beginQuiz() {
   timerCountDown();
+  //hiding the quiz container.
+  quizContainerEl.setAttribute("class", "hide");
 }
 //Writing Time Remaining to HTML:
 document.createAttribute("timer").innerHTML = timeRemaining;

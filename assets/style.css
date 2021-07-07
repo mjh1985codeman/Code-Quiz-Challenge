@@ -8,7 +8,9 @@ body {
     background-color: hsla(50, 17%, 93%, 0.5);
     justify-content: center;
 }
-
+.hide {
+    display: none;
+}
 .h-scores a {
     display: flex;
     flex-direction: row;

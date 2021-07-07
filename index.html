@@ -17,13 +17,13 @@
             <a href="./assets/highscores.html">View HighScores</a>
           </div>
         </nav>
+      </header>
+      <!-- Main section to Hold the Quiz-->
+      <div id="quiz-content" class="quiz-cont">
         <h1>Click Start to Begin Quiz!</h1>
         <div class="strt-btn">
           <button id="start-quiz" class="btn">START</button>
         </div>
-      </header>
-      <!-- Main section to Hold the Quiz-->
-      <div id="quiz-content" class="quiz-cont">
         <p>
           You will have 60 seconds to test your knowledge of the JavaScript
           Language! For each question you get incorrect, 15 seconds will be
@@ -31,6 +31,11 @@
           will be your score. Good Luck!!!
         </p>
         <!-- Quiz Questions and Answers will go here. -->
+      </div>
+      <div id="question-container" class="hide">
+        <h3 id="quote"></h3>
+        <div id="choices"></div>
+        <div id="feedback"></div>
       </div>
       <!-- Quiz Scores -->
       <div id="scores">
