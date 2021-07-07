@@ -9,25 +9,34 @@
   </head>
   <body>
     <!-- Whole Page Stylings -->
-    <div class="content-container">
-        <header>
-            <div class="flex-column">
-                <h1>Click Start to Begin Quiz!</h1>
-                <nav>
-                    <button id="scoresEl" class = "btn">Scores</button>
-                    <button id="start-quiz" class = "btn">START</button>
-                </nav>
-        </header>
-    <!-- Main section to Hold the Quiz-->
+    <div>
+      <header>
+        <nav id="timer">
+          Timer will go here.
+          <div class="h-scores">
+            <a href="./assets/highscores.html">View HighScores</a>
+          </div>
+        </nav>
+        <h1>Click Start to Begin Quiz!</h1>
+        <div class="strt-btn">
+          <button id="start-quiz" class="btn">START</button>
+        </div>
+      </header>
+      <!-- Main section to Hold the Quiz-->
       <div id="quiz-content" class="quiz-cont">
-        <p>You will have 60 seconds to test your knowledge of the JavaScript Language!  For each question you get incorrect, 15 seconds will be deducted from your time remaining.  The number of seconds you have left will be your score.  Good Luck!!!</p>
+        <p>
+          You will have 60 seconds to test your knowledge of the JavaScript
+          Language! For each question you get incorrect, 15 seconds will be
+          deducted from your time remaining. The number of seconds you have left
+          will be your score. Good Luck!!!
+        </p>
         <!-- Quiz Questions and Answers will go here. -->
       </div>
       <!-- Quiz Scores -->
       <div id="scores">
-         <!-- User Scores will display here. -->
+        <!-- User Scores will display here. -->
       </div>
     </div>
-<script src="./assets/script.js"></script>
+    <script src="./assets/script.js"></script>
   </body>
 </html>
