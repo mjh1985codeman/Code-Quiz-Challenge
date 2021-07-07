@@ -60,29 +60,46 @@ document.getElementById("start-quiz").addEventListener("click", beginQuiz);
 // function to begin the timer once the "START" button is selected. 
 function beginQuiz() {
 
-    window.alert("The quiz has begun!");
-
+    timerCountDown();
 }
-
-
+//Writing Time Remaining to HTML: 
+document.getElementById("timer").innerHTML = ("timeRemaining");
+//Timer Variable;
+var timeRemaining = 60;
+//Timer Countdown function. 
+function timerCountDown() {
+  //var timeRemaining = 60;
+  var timer = setInterval(function() {
+    console.log(timeRemaining);
+    timeRemaining--;
+    if(timeRemaining === 0) {
+      stopInterval()
+    }
+  }, 1000);
+  
+  var stopInterval = function() {
+    console.log('Your Time is Up!');
+    clearInterval(timer);
+  }
+ };
 
 // Function to Generate the QuizQuestions.
 
 function generateQuiz() {
     // starts the timer.
+    
     // display the first question from the quizQuestions array and possible answers to that question.
 };
 
-function timerCountdown() {
-    // code for to begin.
-    // at the end of the quiz the secondsRemaining will need to be saved as the user score. 
-};
+
+
+
 
 function saveUserScore() {
     // this function will save the user Score as a variable to be used for the "displayHighScores" function
 }
 function displayhighScores () {
-    // this function will display the stored scores on the screen for h
+    // this function will display the stored scores on the highscores.html page.
 }
 
 
