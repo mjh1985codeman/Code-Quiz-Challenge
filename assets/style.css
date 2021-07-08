@@ -4,17 +4,18 @@
 }
 
 body {
-    display: flex;
+    display: flex; 
     background-color: hsla(50, 17%, 93%, 0.5);
-    justify-content: center;
+    justify-content: center; 
 }
 .hide {
     display: none;
 }
+
 .h-scores a {
-    display: flex;
-    flex-direction: row;
     font-size: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 button {
@@ -36,13 +37,8 @@ button {
 
 header {
     display: flex;
-    flex-direction: column;
-}
-
-.timer-style {
-    display: flex;
-    flex-direction: row;
-}
+    
+} 
 
 h1 {
     font-size: 40px;
@@ -51,21 +47,18 @@ h1 {
     justify-content: center;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-}
 
 .strt-btn {
     display: flex;
     justify-content: center;
 }
 
-.quiz-cont p {
+.quiz-cont {
     font-size: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding-top: 40px;
     max-width: 85vh;
 

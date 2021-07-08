@@ -61,7 +61,7 @@ var quizContainerEl = document.getElementById("quiz-content");
 var questionContainerEl = document.getElementById("question-container");
 var quoteEl = document.getElementById("quote");
 var choicesEl = document.getElementById("choices");
-var feedbackEl = document.getEleementById("feedback");
+var feedbackEl = document.getElementById("feedback");
 // Event Listeners
 
 document.getElementById("start-quiz").addEventListener("click", beginQuiz);
@@ -97,7 +97,6 @@ function timerCountDown() {
 // Function to Generate the QuizQuestions.
 
 function generateQuiz() {
-  // starts the timer.
   // display the first question from the quizQuestions array and possible answers to that question.
 }
 
