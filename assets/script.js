@@ -1,8 +1,8 @@
 // array to hold all the questions and answers.
 
-var quizQuestions = [
+var quizQuestionsAnswers = [
   {
-    question: "The window.confirm function returns a value of _____", //do it like this!!!
+    question: "The window.confirm function returns a value of _____",
     answers: [
       "true/false",
       "A Number",
@@ -13,48 +13,35 @@ var quizQuestions = [
   },
   {
     question: "Placing conten between parentheses is called _____",
-    answers: {
-      a: "Parenting",
-      b: "Object Manipulation",
-      c: "Passing an argument into a function",
-      d: "An Expression",
-    },
-    correctAnswer: "c",
+    answers: [
+      "Parenting",
+      "Object Manipulation",
+      "Passing an argument into a function",
+      "An Expression",
+    ],
+    correctAnswer: "Passing an argument into a function",
   },
   {
     question:
       "In JavaScript in order for a Function to execute it must be defined and then _____",
-    answers: {
-      a: "called",
-      b: "executed",
-      c: "fired",
-      d: "enacted",
-    },
-    correctAnswer: "a",
+    answers: ["called", "executed", "fired", "enacted"],
+    correctAnswer: "called",
   },
   {
     question:
       "A ______ is a named location for a value that gets stored in the browser's memory when a program is run.",
-    answers: {
-      a: "place-holder",
-      b: "variable",
-      c: "directory",
-      d: "cookie",
-    },
-    correctAnswer: "b",
+    answers: ["place-holder", "variable", "directory", "cookie"],
+    correctAnswer: "variable",
   },
   {
     question:
       "The infamous 'if...else' statement is an example of a ______ statement.",
-    answers: {
-      a: "direct",
-      b: "propietary",
-      c: "boolean",
-      d: "conditional",
-    },
-    correctAnswer: "d",
+    answers: ["direct", "propietary", "boolean", "conditional"],
+    correctAnswer: "conditional",
   },
 ];
+
+console.log(quizQuestionsAnswers);
 // Variables to control the DOM
 var timerEl = document.getElementById("timer");
 var quizContainerEl = document.getElementById("quiz-content");
