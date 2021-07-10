@@ -87,18 +87,10 @@ document
   .addEventListener("click", displayQuestion);
 
 // Event Listeners for Answer Buttons which trigger the validateAnswer Function.
-document
-  .getElementById("answerChoice1")
-  .addEventListener("click", validateAnswer);
-document
-  .getElementById("answerChoice2")
-  .addEventListener("click", validateAnswer);
-document
-  .getElementById("answerChoice3")
-  .addEventListener("click", validateAnswer);
-document
-  .getElementById("answerChoice4")
-  .addEventListener("click", validateAnswer);
+var elements = document.getElementsByClassName("answer-btn");
+for (var i = 0; i < elements.length; i++) {
+  elements[i].addEventListener("click", validateAnswer);
+}
 
 // function to begin the timer once the "START" button is selected.
 function beginQuiz() {
@@ -115,7 +107,6 @@ var timeRemaining = 60;
 //Timer Countdown function.
 
 function timerCountDown() {
-  //var timeRemaining = 60;
   var countdown = setInterval(function () {
     timeRemaining--;
     timerEl.textContent = timeRemaining + " Seconds Remaining.";
@@ -124,6 +115,7 @@ function timerCountDown() {
     }
     if (timeRemaining === 0) {
       timerEl.textContent = "Time is Up!";
+      endGame();
     }
   }, 1000);
 
@@ -134,34 +126,54 @@ function timerCountDown() {
   //and carry over the "timeRemaining" as the userScore to be stored locally.
 }
 
-// variable to store the "current question"
+// variables to store the "current question" and "current choices" index
 var currentQuestionIndex = 0;
 var currentChoicesIndex = 0;
+//var currentQuestion;
 // Function to display the question and answer. .
 function displayQuestion() {
-  console.log("The Quiz has begun!");
-  //Writes first question (index 0) to HTML of quizQuestionsAnswers
-  var currentQuestion = quizQuestionsAnswers[currentQuestionIndex++];
-  quizQuestionsEl.textContent = currentQuestion.question;
-  // Writes the possible choices/answers of those questions to the button HTML.
-  var currentChoices = quizQuestionsAnswers[currentChoicesIndex++];
-  answerButtonEl1.textContent = currentChoices.answers[0];
-  answerButtonEl2.textContent = currentChoices.answers[1];
-  answerButtonEl3.textContent = currentChoices.answers[2];
-  answerButtonEl4.textContent = currentChoices.answers[3];
-  // How would I generate the next question(s) based on the click events when the user
+  if (currentQuestionIndex < 5) {
+    //Writes first question (index 0) to HTML of quizQuestionsAnswers
+    var currentQuestion = quizQuestionsAnswers[currentQuestionIndex++];
+    quizQuestionsEl.textContent = currentQuestion.question;
+    // Writes the possible choices/answers of those questions to the button HTML.
+    var currentChoices = quizQuestionsAnswers[currentChoicesIndex++];
+    answerButtonEl1.textContent = currentChoices.answers[0];
+    answerButtonEl2.textContent = currentChoices.answers[1];
+    answerButtonEl3.textContent = currentChoices.answers[2];
+    answerButtonEl4.textContent = currentChoices.answers[3];
+    // How would I generate the next question(s) based on the click events when the user
+  } else {
+    endGame();
+  }
   // answers the question?. . .Do I need to write "return" here so I can call currentQuestion
   //with another function?
 }
 
-// Function to validate the user answers.
+// variable that holds the correct answer of the currentChoices Index.
 
+// Function to validate the user answers.
 function validateAnswer() {
-  //validate selection
+  //storing button choice from user as userChoice variable.
+  var userChoice = this.textContent;
+  console.log(userChoice);
+  // GETTING STUCK HERE.
+  if (userChoice === currentChoices.answers.correctAnswer) {
+    console.log("You got it right!");
+  }
+  // if (userChoice !== correctQuestionAnswer) {
+
+  // }
+
   //currentQuestionIndex = currentQuestionIndex++; //used to iterate currentQuestionIndex by 1.
-  console.log("You picked an answer!");
+
   //currentQuestionIndex = currentQuestionIndex++;
+
   displayQuestion();
+}
+
+function endGame() {
+  console.log("The Game is Over");
 }
 
 function saveUserScore() {
