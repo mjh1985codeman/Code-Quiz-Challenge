@@ -105,6 +105,7 @@ document.createAttribute("timer").innerHTML = timeRemaining;
 //Timer Variable;
 var timeRemaining = 60;
 //Timer Countdown function.
+// Clear Timer Function.
 
 function timerCountDown() {
   var countdown = setInterval(function () {
@@ -158,7 +159,7 @@ function validateAnswer() {
   var userChoice = this.textContent;
   console.log(userChoice);
   // GETTING STUCK HERE.
-  if (userChoice === currentChoices.answers.correctAnswer) {
+  if (userChoice === this.currentChoices) {
     console.log("You got it right!");
   }
   // if (userChoice !== correctQuestionAnswer) {
