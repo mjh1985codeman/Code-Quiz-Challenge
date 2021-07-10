@@ -135,7 +135,9 @@ function timerCountDown() {
 // variables to store the "current question" and "current choices" index
 var currentQuestionIndex = 0;
 var currentChoicesIndex = 0;
-//var currentQuestion;
+// global userInitials variable.
+var userInitials;
+
 // Function to display the question and answer. .
 function displayQuestion() {
   if (currentQuestionIndex < 5) {
@@ -176,7 +178,6 @@ function validateAnswer() {
 
 //Function to End the Game.
 function endGame() {
-  console.log("The Game is Over");
   // hides question container when endGame function is triggered.
   questionContainerEl.setAttribute("class", "hide");
   // hides timer when endGame function is triggered.
@@ -186,14 +187,12 @@ function endGame() {
   getUserInitials();
 }
 
-var userInitials;
-
 var getUserInitials = function () {
-  console.log("Put in your initials to save your score!");
   userEndGameInputEl.removeAttribute("class", "hide");
 };
 
 function submitInitials() {
-  console.log("Your initials have been saved!");
-  // Need to write in code to capture the userInitials.
+  // setting var of userInitials and wrote code to capture the text put into the #userInitialsInputTxtbox.
+  var userInitials = document.getElementById("userInitialsInputTxtBox").value;
+  console.log(userInitials);
 }
