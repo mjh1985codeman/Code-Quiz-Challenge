@@ -159,8 +159,13 @@ function validateAnswer() {
   var userChoice = this.textContent;
   console.log(userChoice);
   // GETTING STUCK HERE.
-  if (userChoice === this.currentChoices) {
+  if (
+    userChoice === quizQuestionsAnswers[currentQuestionIndex - 1].correctAnswer
+  ) {
     console.log("You got it right!");
+  } else {
+    console.log("You got it wrong!");
+    timeRemaining = timeRemaining - 15;
   }
   // if (userChoice !== correctQuestionAnswer) {
 
