@@ -1,3 +1,29 @@
+//  PSEUDOCODE:
+/*
+-User clicks button to "Start Quiz" 
+-Intro text dissapears (done)
+-Timer starts counting down from 60 (done)
+-Question and answer Setup (I have an array of 5 objects). 
+-Each object contains a question (string) w/ 4 possible choices 
+(1 array of 4 strings) and the correctChoice (string).
+-Need to figue out to iterate through the array of objects and 
+write them to the HTML ONE AT A TIME to the using the 
+StartButton Event Listener (which is already in place?)
+-Once the user hits the button (choice) to the first question they 
+are advised if the answer is right or wrong (need to validate 
+by comparing the string of their choice (button)) if it equals the 
+string in the "correctChoice" string of that object.). 
+-If the answer is *wrong* the user is advised the answer is wrong 
+and 15 seconds gets deducted from the timer and the -next question is displayed. (Validation). 
+-If the answer is *correct* the user is alerted the answer is correct
+and the next question is displayed (validation). 
+-This cycle continues until all the questions are attempted -OR- the timeRemaining runs out.  
+-The ending value of timeRemaining is the users score. 
+
+- End game message is displayed and user is given text input to put in their initials. 
+-Store their initials and score into Local Storage.
+*/
+
 // array to hold all the questions and answers.
 
 var quizQuestionsAnswers = [
@@ -41,29 +67,41 @@ var quizQuestionsAnswers = [
   },
 ];
 
-console.log(quizQuestionsAnswers);
 // Variables to control the DOM
 var timerEl = document.getElementById("timer");
-var quizContainerEl = document.getElementById("quiz-content");
+var containerEl = document.getElementById("intro-content");
 var questionContainerEl = document.getElementById("question-container");
-var quoteEl = document.getElementById("quote");
+var quizQuestionEl = document.getElementById("quiz-questions");
 var choicesEl = document.getElementById("choices");
 var feedbackEl = document.getElementById("feedback");
-// Event Listeners
+
+// Event Listeners for Start Button.
 
 document.getElementById("start-quiz").addEventListener("click", beginQuiz);
+document.getElementById("start-quiz").addEventListener("click", generateQuiz);
+
+// Even Listeners for Answer Buttons.
+document
+  .getElementById("answerChoices")
+  .addEventListener("click", validateAnswer);
+
+function generateQuiz() {
+  console.log("The Quiz has begun!");
+}
 
 // function to begin the timer once the "START" button is selected.
 function beginQuiz() {
   timerCountDown();
-  //hiding the quiz container.
-  quizContainerEl.setAttribute("class", "hide");
+  //hiding the quiz introduction text.
+  containerEl.setAttribute("class", "hide");
 }
+
 //Writing Time Remaining to HTML:
 document.createAttribute("timer").innerHTML = timeRemaining;
 //Timer Variable;
 var timeRemaining = 60;
 //Timer Countdown function.
+
 function timerCountDown() {
   //var timeRemaining = 60;
   var countdown = setInterval(function () {
@@ -81,11 +119,9 @@ function timerCountDown() {
   //and carry over the "timeRemaining" as the userScore to be stored locally.
 }
 
-// Function to Generate the QuizQuestions.
+// Function to validate the user answers.
 
-function generateQuiz() {
-  // display the first question from the quizQuestions array and possible answers to that question.
-}
+function validateAnswer() {}
 
 function saveUserScore() {
   // this function will save the user Score as a variable to be used for the "displayHighScores" function
