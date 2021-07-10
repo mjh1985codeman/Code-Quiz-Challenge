@@ -1,6 +1,6 @@
 //  PSEUDOCODE:
 /*
--User clicks button to "Start Quiz" 
+-User clicks button to "Start Quiz" (done)
 -Intro text dissapears (done)
 -Timer starts counting down from 60 (done)
 -Question and answer Setup (I have an array of 5 objects). 
@@ -69,10 +69,14 @@ var quizQuestionsAnswers = [
 
 // Variables to control the DOM
 var timerEl = document.getElementById("timer");
-var containerEl = document.getElementById("intro-content");
+var introContentEl = document.getElementById("intro-content");
 var questionContainerEl = document.getElementById("question-container");
-var quizQuestionEl = document.getElementById("quiz-questions");
+var quizQuestionsEl = document.getElementById("quiz-questions");
 var choicesEl = document.getElementById("choices");
+var answerButtonEl1 = document.getElementById("answerChoice1");
+var answerButtonEl2 = document.getElementById("answerChoice2");
+var answerButtonEl3 = document.getElementById("answerChoice3");
+var answerButtonEl4 = document.getElementById("answerChoice4");
 var feedbackEl = document.getElementById("feedback");
 
 // Event Listeners for Start Button.
@@ -80,7 +84,7 @@ var feedbackEl = document.getElementById("feedback");
 document.getElementById("start-quiz").addEventListener("click", beginQuiz);
 document.getElementById("start-quiz").addEventListener("click", generateQuiz);
 
-// Even Listeners for Answer Buttons.
+// Even Listeners for Answer Buttons which trigger the validateAnswer Function.
 document
   .getElementById("answerChoice1")
   .addEventListener("click", validateAnswer);
@@ -94,15 +98,12 @@ document
   .getElementById("answerChoice4")
   .addEventListener("click", validateAnswer);
 
-function generateQuiz() {
-  console.log("The Quiz has begun!");
-}
-
 // function to begin the timer once the "START" button is selected.
 function beginQuiz() {
   timerCountDown();
   //hiding the quiz introduction text.
-  containerEl.setAttribute("class", "hide");
+  introContentEl.setAttribute("class", "hide");
+  questionContainerEl.removeAttribute("class", "hide");
 }
 
 //Writing Time Remaining to HTML:
@@ -115,9 +116,12 @@ function timerCountDown() {
   //var timeRemaining = 60;
   var countdown = setInterval(function () {
     timeRemaining--;
-    timerEl.textContent = timeRemaining;
+    timerEl.textContent = timeRemaining + " Seconds Remaining.";
     if (timeRemaining <= 0) {
       stopInterval();
+    }
+    if (timeRemaining === 0) {
+      timerEl.textContent = "Time is Up!";
     }
   }, 1000);
 
@@ -128,11 +132,25 @@ function timerCountDown() {
   //and carry over the "timeRemaining" as the userScore to be stored locally.
 }
 
+// Function to Generate the Quiz.
+function generateQuiz() {
+  console.log("The Quiz has begun!");
+  //Writes first question (index 0) to HTML of quizQuestionsAnswers
+  var currentQuestion = quizQuestionsAnswers[0];
+  quizQuestionsEl.textContent = currentQuestion.question;
+  // Writes the possible choices/answers of those questions to the button HTML.
+  var currentChoices = quizQuestionsAnswers[0];
+  answerButtonEl1.textContent = currentChoices.answers[0];
+  answerButtonEl2.textContent = currentChoices.answers[1];
+  answerButtonEl3.textContent = currentChoices.answers[2];
+  answerButtonEl4.textContent = currentChoices.answers[3];
+  // How would I generate the next question(s) based on the click events when the user
+  // answers the question?
+}
+
 // Function to validate the user answers.
 
-function validateAnswer() {
-  console.log("Great Choice!");
-}
+function validateAnswer() {}
 
 function saveUserScore() {
   // this function will save the user Score as a variable to be used for the "displayHighScores" function

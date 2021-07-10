@@ -60,3 +60,22 @@ h1 {
   padding-top: 40px;
   max-width: 85vh;
 }
+
+.quiz-questions-answers {
+  display: flex;
+  flex-direction: column;
+}
+
+.answer-btn {
+    font-size: 20px;
+    border: solid 2px black;
+    border-radius: 10px;
+    background-color: hsla(30, 84%, 50%, 0.781);
+  }
+  
+  .answer-btn:hover {
+    background-color: black;
+    color: hsla(30, 84%, 50%, 0.781);
+    border: hsla(30, 84%, 50%, 0.781) solid 2px;
+  }
+

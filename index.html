@@ -12,7 +12,7 @@
     <div>
       <header>
         <nav>
-          <p>Seconds Remaining: <span id="timer"></span></p>
+          <p><span id="timer"></span></p>
           <div class="h-scores">
             <a href="./assets/highscores.html">View HighScores</a>
           </div>
@@ -32,16 +32,17 @@
         </p>
         <!-- Quiz Questions and Answers will go here. -->
       </div>
-      <div id="question-container" class="hide"></div>
-      <div>
-        <h3 id="quiz-questions"></h3>
-        <div id="choices" class="answerbuttons">
-          <button id="answerChoice1"></button>
-          <button id="answerChoice2"></button>
-          <button id="answerChoice3"></button>
-          <button id="answerChoice4"></button>
+      <div id="question-container" class="hide">
+        <div class="quiz-questions-answers">
+          <h3 id="quiz-questions"></h3>
+          <div id="choices">
+            <button class="answer-btn" id="answerChoice1"></button>
+            <button class="answer-btn" id="answerChoice2"></button>
+            <button class="answer-btn" id="answerChoice3"></button>
+            <button class="answer-btn" id="answerChoice4"></button>
+          </div>
+          <div id="feedback"></div>
         </div>
-        <div id="feedback"></div>
       </div>
       <!-- Quiz Scores -->
       <div id="scores">
