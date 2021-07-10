@@ -38,7 +38,7 @@ var quizQuestionsAnswers = [
     correctAnswer: "true/false",
   },
   {
-    question: "Placing conten between parentheses is called _____",
+    question: "Placing content between parentheses is called _____",
     answers: [
       "Parenting",
       "Object Manipulation",
@@ -82,9 +82,11 @@ var feedbackEl = document.getElementById("feedback");
 // Event Listeners for Start Button.
 
 document.getElementById("start-quiz").addEventListener("click", beginQuiz);
-document.getElementById("start-quiz").addEventListener("click", generateQuiz);
+document
+  .getElementById("start-quiz")
+  .addEventListener("click", displayQuestion);
 
-// Even Listeners for Answer Buttons which trigger the validateAnswer Function.
+// Event Listeners for Answer Buttons which trigger the validateAnswer Function.
 document
   .getElementById("answerChoice1")
   .addEventListener("click", validateAnswer);
@@ -132,11 +134,13 @@ function timerCountDown() {
   //and carry over the "timeRemaining" as the userScore to be stored locally.
 }
 
-// Function to Generate the Quiz.
-function generateQuiz() {
+// variable to store the "current question"
+var currentQuestionIndex = 0;
+// Function to display the question and answer. .
+function displayQuestion() {
   console.log("The Quiz has begun!");
   //Writes first question (index 0) to HTML of quizQuestionsAnswers
-  var currentQuestion = quizQuestionsAnswers[0];
+  var currentQuestion = quizQuestionsAnswers[currentQuestionIndex++];
   quizQuestionsEl.textContent = currentQuestion.question;
   // Writes the possible choices/answers of those questions to the button HTML.
   var currentChoices = quizQuestionsAnswers[0];
@@ -145,12 +149,19 @@ function generateQuiz() {
   answerButtonEl3.textContent = currentChoices.answers[2];
   answerButtonEl4.textContent = currentChoices.answers[3];
   // How would I generate the next question(s) based on the click events when the user
-  // answers the question?
+  // answers the question?. . .Do I need to write "return" here so I can call currentQuestion
+  //with another function?
 }
 
 // Function to validate the user answers.
 
-function validateAnswer() {}
+function validateAnswer() {
+  //validate selection
+  //currentQuestionIndex = currentQuestionIndex++; //used to iterate currentQuestionIndex by 1.
+  console.log("You picked an answer!");
+  //currentQuestionIndex = currentQuestionIndex++;
+  displayQuestion();
+}
 
 function saveUserScore() {
   // this function will save the user Score as a variable to be used for the "displayHighScores" function
@@ -158,7 +169,3 @@ function saveUserScore() {
 function displayhighScores() {
   // this function will display the stored scores on the highscores.html page.
 }
-
-//generateQuiz ();
-
-//beginQuiz();
