@@ -82,7 +82,16 @@ document.getElementById("start-quiz").addEventListener("click", generateQuiz);
 
 // Even Listeners for Answer Buttons.
 document
-  .getElementById("answerChoices")
+  .getElementById("answerChoice1")
+  .addEventListener("click", validateAnswer);
+document
+  .getElementById("answerChoice2")
+  .addEventListener("click", validateAnswer);
+document
+  .getElementById("answerChoice3")
+  .addEventListener("click", validateAnswer);
+document
+  .getElementById("answerChoice4")
   .addEventListener("click", validateAnswer);
 
 function generateQuiz() {
@@ -121,7 +130,9 @@ function timerCountDown() {
 
 // Function to validate the user answers.
 
-function validateAnswer() {}
+function validateAnswer() {
+  console.log("Great Choice!");
+}
 
 function saveUserScore() {
   // this function will save the user Score as a variable to be used for the "displayHighScores" function
