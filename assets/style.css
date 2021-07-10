@@ -79,3 +79,16 @@ h1 {
     border: hsla(30, 84%, 50%, 0.781) solid 2px;
   }
 
+  .submit-btn {
+    font-size: 20px;
+    border: solid 2px black;
+    border-radius: 10px;
+    background-color: hsla(30, 84%, 50%, 0.781);
+  }
+
+  .submit-btn:hover {
+    background-color: black;
+    color: hsla(30, 84%, 50%, 0.781);
+    border: hsla(30, 84%, 50%, 0.781) solid 2px;
+  }
+

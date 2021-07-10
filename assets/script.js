@@ -79,9 +79,8 @@ var answerButtonEl3 = document.getElementById("answerChoice3");
 var answerButtonEl4 = document.getElementById("answerChoice4");
 var feedbackEl = document.getElementById("feedback");
 var userScoresEl = document.getElementById("user-scores");
-var userScoreInputEl = document.getElementById("user-score-input");
-
-// global variables
+var userEndGameInputEl = document.getElementById("user-endgame-input");
+var userInitialsInputEl = document.getElementById("userInitialsInputTxtBox");
 
 // Event Listeners for Start Button.
 
@@ -95,6 +94,11 @@ var elements = document.getElementsByClassName("answer-btn");
 for (var i = 0; i < elements.length; i++) {
   elements[i].addEventListener("click", validateAnswer);
 }
+
+//Event Listners for Submit Button to capture user Initials
+document
+  .getElementById("userIntialSubmitBtn")
+  .addEventListener("click", submitInitials);
 
 // function to begin the timer once the "START" button is selected.
 function beginQuiz() {
@@ -182,6 +186,14 @@ function endGame() {
   getUserInitials();
 }
 
+var userInitials;
+
 var getUserInitials = function () {
   console.log("Put in your initials to save your score!");
+  userEndGameInputEl.removeAttribute("class", "hide");
 };
+
+function submitInitials() {
+  console.log("Your initials have been saved!");
+  // Need to write in code to capture the userInitials.
+}
