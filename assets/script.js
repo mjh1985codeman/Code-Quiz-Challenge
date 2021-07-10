@@ -173,9 +173,15 @@ function validateAnswer() {
 //Function to End the Game.
 function endGame() {
   console.log("The Game is Over");
-  // create HTML input element so user can store their initials.
+  // hides question container when endGame function is triggered.
   questionContainerEl.setAttribute("class", "hide");
+  // hides timer when endGame function is triggered.
   timerEl.setAttribute("class", "hide");
   var userScore = timeRemaining;
   console.log(userScore);
+  getUserInitials();
 }
+
+var getUserInitials = function () {
+  console.log("Put in your initials to save your score!");
+};
