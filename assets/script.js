@@ -79,6 +79,7 @@ var answerButtonEl3 = document.getElementById("answerChoice3");
 var answerButtonEl4 = document.getElementById("answerChoice4");
 var feedbackEl = document.getElementById("feedback");
 var userScoresEl = document.getElementById("user-scores");
+var userScoreInputEl = document.getElementById("user-score-input");
 
 // global variables
 
@@ -115,7 +116,7 @@ function timerCountDown() {
     timeRemaining--;
     timerEl.textContent = timeRemaining + " Seconds Remaining.";
     if (timeRemaining === 0 || timeRemaining < 0) {
-      timerEl.textContent = "Time is Up!";
+      timerEl.textContent = "Game Over!";
       stopInterval();
     }
   }, 1000);
@@ -157,23 +158,24 @@ function displayQuestion() {
 function validateAnswer() {
   //storing button choice from user as userChoice variable.
   var userChoice = this.textContent;
-  console.log(userChoice);
   // GETTING STUCK HERE.
   if (
     userChoice === quizQuestionsAnswers[currentQuestionIndex - 1].correctAnswer
   ) {
-    alert("You got it right!");
+    alert("Great Job!  You got it right!");
   } else {
-    alert("You got it wrong!");
+    alert("You got it wrong and lost 15 Seconds!");
     timeRemaining = timeRemaining - 15;
   }
   displayQuestion();
 }
 
+//Function to End the Game.
 function endGame() {
   console.log("The Game is Over");
   // create HTML input element so user can store their initials.
-  console.log(timeRemaining);
-
   questionContainerEl.setAttribute("class", "hide");
+  timerEl.setAttribute("class", "hide");
+  var userScore = timeRemaining;
+  console.log(userScore);
 }
