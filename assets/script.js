@@ -78,6 +78,9 @@ var answerButtonEl2 = document.getElementById("answerChoice2");
 var answerButtonEl3 = document.getElementById("answerChoice3");
 var answerButtonEl4 = document.getElementById("answerChoice4");
 var feedbackEl = document.getElementById("feedback");
+var userScoresEl = document.getElementById("user-scores");
+
+// global variables
 
 // Event Listeners for Start Button.
 
@@ -111,12 +114,9 @@ function timerCountDown() {
   var countdown = setInterval(function () {
     timeRemaining--;
     timerEl.textContent = timeRemaining + " Seconds Remaining.";
-    if (timeRemaining <= 0) {
-      stopInterval();
-    }
-    if (timeRemaining === 0) {
+    if (timeRemaining === 0 || timeRemaining < 0) {
       timerEl.textContent = "Time is Up!";
-      endGame();
+      stopInterval();
     }
   }, 1000);
 
@@ -162,29 +162,18 @@ function validateAnswer() {
   if (
     userChoice === quizQuestionsAnswers[currentQuestionIndex - 1].correctAnswer
   ) {
-    console.log("You got it right!");
+    alert("You got it right!");
   } else {
-    console.log("You got it wrong!");
+    alert("You got it wrong!");
     timeRemaining = timeRemaining - 15;
   }
-  // if (userChoice !== correctQuestionAnswer) {
-
-  // }
-
-  //currentQuestionIndex = currentQuestionIndex++; //used to iterate currentQuestionIndex by 1.
-
-  //currentQuestionIndex = currentQuestionIndex++;
-
   displayQuestion();
 }
 
 function endGame() {
   console.log("The Game is Over");
-}
+  // create HTML input element so user can store their initials.
+  console.log(timeRemaining);
 
-function saveUserScore() {
-  // this function will save the user Score as a variable to be used for the "displayHighScores" function
-}
-function displayhighScores() {
-  // this function will display the stored scores on the highscores.html page.
+  questionContainerEl.setAttribute("class", "hide");
 }
