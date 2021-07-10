@@ -136,6 +136,7 @@ function timerCountDown() {
 
 // variable to store the "current question"
 var currentQuestionIndex = 0;
+var currentChoicesIndex = 0;
 // Function to display the question and answer. .
 function displayQuestion() {
   console.log("The Quiz has begun!");
@@ -143,7 +144,7 @@ function displayQuestion() {
   var currentQuestion = quizQuestionsAnswers[currentQuestionIndex++];
   quizQuestionsEl.textContent = currentQuestion.question;
   // Writes the possible choices/answers of those questions to the button HTML.
-  var currentChoices = quizQuestionsAnswers[0];
+  var currentChoices = quizQuestionsAnswers[currentChoicesIndex++];
   answerButtonEl1.textContent = currentChoices.answers[0];
   answerButtonEl2.textContent = currentChoices.answers[1];
   answerButtonEl3.textContent = currentChoices.answers[2];
