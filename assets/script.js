@@ -97,7 +97,7 @@ for (var i = 0; i < elements.length; i++) {
 
 //Event Listners for Submit Button to capture user Initials
 document
-  .getElementById("userIntialSubmitBtn")
+  .getElementById("userInitialSubmitBtn")
   .addEventListener("click", submitInitials);
 
 // function to begin the timer once the "START" button is selected.
@@ -195,7 +195,6 @@ var getUserInitials = function () {
 function submitInitials() {
   // setting var of userInitials and wrote code to capture the text put into the #userInitialsInputTxtbox.
   userInitials = document.getElementById("userInitialsInputTxtBox").value;
-  window.open("");
   console.log(userInitials);
   storeUserResultsLocalStorage();
 }
