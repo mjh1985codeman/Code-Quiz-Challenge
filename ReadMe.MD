@@ -17,7 +17,12 @@ WHEN the game is over
 THEN I can save my initials and score
 
 # URL to deployed Project
+https://mjh1985codeman.github.io/Code-Quiz-Challenge/
 
 # Screenshot of Deployed Project
-
+Quiz Home Page:
+[![QuizPage.jpg](https://i.postimg.cc/W1QqqJw9/QuizPage.jpg)](https://postimg.cc/Hr9kfnK5)
+Quiz Scores Page showing Local Storage:
+[![Local-Storage.jpg](https://i.postimg.cc/8PYjxr91/Local-Storage.jpg)](https://postimg.cc/WhMNktsK)
 # GitHub Repo URL
+https://github.com/mjh1985codeman/Code-Quiz-Challenge
