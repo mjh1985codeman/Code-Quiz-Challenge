@@ -194,7 +194,7 @@ var getUserInitials = function () {
 
 function submitInitials() {
   // setting var of userInitials and wrote code to capture the text put into the #userInitialsInputTxtbox.
-  var userInitials = document.getElementById("userInitialsInputTxtBox").value;
+  userInitials = document.getElementById("userInitialsInputTxtBox").value;
   window.open("");
   console.log(userInitials);
   storeUserResultsLocalStorage();
