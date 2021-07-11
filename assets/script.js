@@ -137,6 +137,7 @@ var currentQuestionIndex = 0;
 var currentChoicesIndex = 0;
 // global userInitials variable.
 var userInitials;
+var timeRemaining = 60;
 
 // Function to display the question and answer. .
 function displayQuestion() {
@@ -194,5 +195,14 @@ var getUserInitials = function () {
 function submitInitials() {
   // setting var of userInitials and wrote code to capture the text put into the #userInitialsInputTxtbox.
   var userInitials = document.getElementById("userInitialsInputTxtBox").value;
+  window.open("");
   console.log(userInitials);
+  storeUserResultsLocalStorage();
 }
+
+//Created function to move user input to local storage
+
+var storeUserResultsLocalStorage = function () {
+  localStorage.setItem("userTimeScore", JSON.stringify(timeRemaining));
+  localStorage.setItem("userInfo", JSON.stringify(userInitials));
+};
